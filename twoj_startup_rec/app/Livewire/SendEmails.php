@@ -44,8 +44,10 @@ class SendEmails extends Component {
             $mails[] = $submail->email;
         }
 
+        // dd($mails);
         foreach($mails as $mail) {
             Mail::to($mail)->send(new Welcome($user->name));
+            // sleep(10); // For the sake of testing, comment out later.
         }
 
         // Add an email sending script here i suppose.
