@@ -40,7 +40,7 @@ class SendEmails extends Component {
 
         $mails[] = $user->email;
 
-        foreach($user->submails() as $submail) {
+        foreach($user->submails()->get() as $submail) {
             $mails[] = $submail->email;
         }
 
